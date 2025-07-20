@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Login()
 {
@@ -8,6 +9,7 @@ function Login()
         password:""
     })
     const[message,setMessage]=useState("")
+    const navigate = useNavigate()
     const handleChange=(e)=>
     {
          setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,6 +21,9 @@ function Login()
             const res = await axios.post("http://localhost:5000/api/auth/login", formData);
       setMessage(res.data.message);
       localStorage.setItem("token", res.data.token);
+       localStorage.setItem("isLoggedIn", "true");
+       navigate("/Support");
+        
         }
         catch(err)
         {

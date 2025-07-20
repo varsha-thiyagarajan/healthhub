@@ -44,7 +44,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         
         {/* ✅ Support route is protected */}
-        <Route path="/spt" element={isLoggedIn ? <Support /> : <Navigate to="/login" />} />
+        <Route path="/Support" element={isLoggedIn ? <Support /> : <Navigate to="/login" />} />
       </Routes>
       <Footer />
     </>
