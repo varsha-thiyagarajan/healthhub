@@ -1,0 +1,12 @@
+# Ignore a single generated file
+search/index.json linguist-generated=true
+
+# Ignore all minified JS files
+*.min.js linguist-generated=true
+
+# Ignore all files in build/dist folders
+dist/** linguist-generated=true
+build/** linguist-generated=true
+
+# Ignore generated search index for static sites
+docs/search_index.json linguist-generated=true
